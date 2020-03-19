@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="base.css">
+    <script src="common.js"></script>
+    <style>
+        /* 轮播图 */
+        
+        #leftIntro {
+            width: 500px;
+            height: 500px;
+            position: relative;
+            float: left;
+            margin-left: 10%;
+            margin-top: 50px;
+            /* border: 1px solid black; */
+            /* background: white; */
+            color: #2E303D;
+            z-index: 990;
+            text-align: left;
+            padding: 20px;
+            box-shadow: 5px 5px 8px #2E303D;
+        }
+        
+        @media screen and (max-width: 1230px) {
+            #leftIntro {
+                width: 1024px;
+                height: 350px;
+                margin-left: 50px;
+                text-align: center;
+            }
+        }
+        
+        #content {
+            position: relative;
+            top: 50px;
+            width: 600px;
+            height: 540px;
+            /* border: 1px solid #2E303D; */
+            margin: 0px auto;
+            z-index: 990;
+            overflow: hidden;
+            /* border: 1px solid black; */
+            box-shadow: 5px 5px 8px #2E303D;
+        }
+        
+        .carousel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 700%;
+        }
+        
+        .carousel li {
+            list-style: none;
+            /* position: relative; */
+            float: left;
+        }
+        
+        .arrLeft,
+        .arrRight {
+            display: none;
+            position: absolute;
+            top: 50%;
+            margin-top: -20px;
+            width: 24px;
+            height: 40px;
+            background: rgba(0, 0, 0, .3);
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+            font-family: 'icomoon';
+            font-size: 18px;
+            z-index: 992;
+            cursor: pointer;
+        }
+        
+        .arrRight {
+            right: 0;
+        }
+        
+        .circle {
+            position: absolute;
+            bottom: 100px;
+            left: 40%;
+        }
+        
+        .circle li {
+            float: left;
+            width: 8px;
+            height: 8px;
+            /*background-color: #fff;*/
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            margin: 0 3px;
+            border-radius: 50%;
+            /*鼠标经过显示小手*/
+            cursor: pointer;
+            list-style: none;
+        }
+        
+        .current {
+            background-color: #fff;
+        }
+        
+        #carouselText {
+            position: absolute;
+            bottom: 0;
+            color: white;
+        }
+        
+        #bottombox {
+            width: 100%;
+            height: 50px;
+            background-color: white;
+            color: #ddd;
+            text-align: center;
+            margin-top: 100px;
+            /* position: relative;
+            float: left; */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class='header'>
+        <ul id='head'>
+            <li>
+                <a href="javascript:">
+                    <p style="font-size:48px;">Cecilia</p>
+                </a>
+            </li>
+            <li><a href="jsexsercise.html">JS练习</a></li>
+            <!-- <li><a href="javascript:">设计作品</a></li> -->
+            <li><a href="project1.html">课程项目</a></li>
+            <li><a href="javascript:">关于我</a></li>
+        </ul>
+    </div>
+    <div id="smallheader">
+        <div class='more'>
+            <a href="javascript:"><img src="image/more.png"></a>
+        </div>
+        <div class='close'>
+            <img src='image/close.png'>
+        </div>
+        <div class='portrait'><img src="image/port.jpg"></div>
+        <div class='contact'>
+            <a href="javascript:"><img src="image/contact.png"></a>
+        </div>
+        <div class='email'>
+            <p>lnr_xixi@163.com</p>
+        </div>
+    </div>
+
+    <div id='smallNav'>
+        <ul>
+            <li><a href="jsexsercise.html">JS练习</a></li>
+            <!-- <li><a href="javascript:">设计作品</a></li> -->
+            <li><a href="project1.html">课程项目</a></li>
+            <li><a href="javascript:">关于我</a></li>
+        </ul>
+    </div>
+    <div id="rightbox"></div>
+
+    <div id="leftIntro">
+        <h1>关于</h1>
+        </br>
+        </br>
+        <h3>本网站</h3>
+        </br>
+        <span>本网站主要用于展示Cecilia的JavaScript动效练习，课程项目。
+        </br>
+        右侧轮播图展示了项目中的设计图片和日常的设计练习。感谢您的观看，欢迎您批评指正。
+    </span>
+        </br>
+        </br>
+        <h3>Cecilia</h3>
+        </br>
+        </br>
+        <span>
+            兴趣爱好，特长：葫芦丝，巴乌，黑管，绘画，排球，篮球，羽毛球</br>
+            自我描述：喜欢旅游，喜欢摄影。</br>
+            联系邮箱：lnr_xixi@163.com
+        </span>
+
+
+    </div>
+
+    <div id="content">
+        <!-- 箭头 -->
+        <div class='arrLeft'>&lt;</div>
+        <div class='arrRight'>&gt;</div>
+
+        <!-- 图片 -->
+        <ul class="carousel">
+            <li>
+                <a><img src="image/js.png" style="width:600px;"></a>
+            </li>
+            <li>
+                <a><img src="image/BBI.png" style="width:600px;"></a>
+            </li>
+            <li>
+                <a><img src="image/design.png" style="width:600px;"></a>
+            </li>
+            <li>
+                <a><img src="image/fringelessPos.png" style="width:600px;"></a>
+            </li>
+            <li>
+                <a><img src="image/Lisbon.png" style="width:600px;"></a>
+            </li>
+            <li>
+                <a><img src="image/portraits.png" style="width:600px;"></a>
+            </li>
+            <!-- <li>
+                <a><img src="blackandwhite.png" style="width:600px;"></a>
+            </li> -->
+        </ul>
+
+        <!-- 圆点 -->
+        <ol class='circle'></ol>
+        <div id="carouselText">
+            点击箭头查看
+        </div>
+    </div>
+
+    <div id="bottombox"><span>由于目前设计作品还在修改中，单独的设计作品展示页面会在之后推出。
+    </br>轮播图会展示部分成果，感谢您的耐心等待！</span>
+    </div>
+    <div id='footer'>
+        <p style="color:white">联系邮箱：lnr_xixi@163.com
+            </br>感谢您的关注！
+        </p>
+    </div>
+
+
+    <script>
+        var more = document.querySelector('.more');
+        var close = document.querySelector('.close');
+        var samllNav = document.querySelector('#smallNav');
+
+        more.addEventListener('click', function() {
+            more.style.display = 'none';
+            close.style.display = 'block';
+            samllNav.style.display = 'block';
+
+        })
+        close.addEventListener('click', function() {
+            more.style.display = 'block';
+            close.style.display = 'none';
+            samllNav.style.display = 'none';
+        })
+
+        var contact = document.querySelector('.contact');
+        var email = document.querySelector('.email');
+        contact.addEventListener('mouseover', function() {
+            email.style.display = 'block';
+        });
+        contact.addEventListener('mouseleave', function() {
+            email.style.display = 'none';
+        })
+
+
+        // 轮播图
+        // 1.鼠标经过，显示箭头
+        var arrLeft = document.querySelector('.arrLeft');
+        var arrRight = document.querySelector('.arrRight');
+
+        var content = document.querySelector('#content');
+
+        content.addEventListener('mouseenter', function() {
+            arrLeft.style.display = 'block';
+            arrRight.style.display = 'block';
+            //放在上面停止即自动播放
+            clearInterval(autoTimer);
+            autoTimer = null;
+        });
+
+        content.addEventListener('mouseleave', function() {
+            arrLeft.style.display = 'none';
+            arrRight.style.display = 'none';
+            //挪开开启
+            autoTimer = setInterval(function() {
+                arrRight.click();
+            }, 2000)
+        });
+
+        //自动播放
+        var autoTimer = setInterval(function() {
+            arrRight.click();
+        }, 2000);
+
+        //2.点击箭头移动
+        var imgWidth = content.offsetWidth;
+        var carousel = document.querySelector('.carousel');
+
+        //3.小圆圈
+        var circle = document.querySelector('.circle');
+
+        for (var i = 0; i < carousel.children.length; i++) {
+            var li = document.createElement('li');
+            circle.appendChild(li);
+            li.setAttribute('index', i);
+            //绑定小圆圈点击事件
+            li.addEventListener('click', function() {
+                //取消其他小圆圈的类
+                for (var i = 0; i < circle.children.length; i++) {
+                    circle.children[i].className = '';
+                }
+
+                var index = this.getAttribute('index');
+                //绑定num和cirnum
+                num = index;
+                cirnum = index;
+                // carousel.style.Left = -index*imgWidth + 'px';
+                animation(carousel, -index * imgWidth);
+                //点击那一个圆圈就是‘current‘
+                this.className = 'current';
+            })
+
+        }
+        circle.children[0].className = 'current';
+
+        //箭头控制
+        var num = 0;
+        var cirnum = 0;
+        var cloneli = carousel.children[0].cloneNode(true);
+        carousel.appendChild(cloneli);
+
+        // 右侧
+        var flag = true;
+        arrRight.addEventListener('click', function() {
+            //节流阀
+            if (flag) {
+                flag = false;
+                //关闭节流阀，动画执行完毕之后开启
+                if (num == carousel.children.length - 1) {
+                    carousel.style.left = 0;
+                    num = 0;
+                }
+                num++;
+                animation(carousel, -num * imgWidth, function() {
+                    flag = true; //打开节流阀
+                });
+                // carousel.style.left = num * imgWidth + 'px';
+                //绑定小圆圈的变化
+                cirnum++;
+                if (cirnum == circle.children.length) {
+                    cirnum = 0;
+                }
+                circleChange();
+            }
+
+
+        })
+
+        // 左侧
+        arrLeft.addEventListener('click', function() {
+            if (flag) {
+                flag = false;
+                if (num == 0) {
+                    num = carousel.children.length - 1;
+                    carousel.style.left = -num * imgWidth + 'px';
+                }
+                num--;
+                animation(carousel, -num * imgWidth, function() {
+                    flag = true
+                }); //打开节流阀
+                //绑定小圆圈的变化
+                cirnum--;
+                if (cirnum < 0) {
+                    cirnum = circle.children.length - 1;
+                }
+                circleChange();
+            }
+
+
+
+        })
+
+
+
+        //动画函数
+        function animation(obj, target, callback) {
+            clearInterval(obj.timer);
+
+            obj.timer = setInterval(function() {
+
+                var step = (target - obj.offsetLeft) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.timer);
+                    callback && callback();
+                }
+
+                obj.style.left = obj.offsetLeft + step + 'px';
+
+
+            }, 15);
+        }
+        //小圆圈变化
+        function circleChange() {
+            for (var i = 0; i < circle.children.length; i++) {
+                circle.children[i].className = '';
+            }
+            circle.children[cirnum].className = 'current';
+        }
+    </script>
+
+</body>
+
+</html>

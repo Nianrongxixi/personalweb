@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>web-project1</title>
+    <link rel="stylesheet" href="base.css">
+    <script src="common.js"></script>
+    <style>
+        #project {
+            position: relative;
+            width: 400px;
+            height: 100px;
+            margin: 24px auto;
+            text-align: center;
+        }
+        
+        #project p {
+            font-size: 24px;
+        }
+        
+        #project a {
+            margin-left: 48px;
+            margin-top: 24px;
+        }
+        
+        #mainProject {
+            width: 90%;
+            overflow: scroll;
+            margin: 10px auto;
+            position: relative;
+            background-color: #fafafa;
+            /* height: 400%; */
+            /* border: 1px solid black; */
+            box-shadow: 5px 5px 8px #2e303d;
+        }
+        
+        @media screen and (max-width: 1024px) {
+            #mainProject {
+                width: 990px;
+            }
+        }
+        
+        #firstLeft {
+            width: 40%;
+            height: 600px;
+            position: relative;
+            float: left;
+            background-color: #eee;
+            color: black;
+            /* border: 1px solid black; */
+        }
+        
+        .intro {
+            position: relative;
+            float: left;
+            margin: 30px 8% 30px;
+            width: 80%;
+            /* border: 1px solid black; */
+        }
+        
+        .introduction {
+            position: relative;
+            float: left;
+            /* border: 1px solid black; */
+            width: 80%;
+            margin-left: 8%;
+            height: 300px;
+            font-size: 1vw;
+            word-break: break-all;
+            /* box-shadow: 5px 5px 8px #ddd; */
+        }
+        
+        #responsible {
+            position: relative;
+            float: left;
+            font-size: 0.8vw;
+            width: 80%;
+            margin: 20px 8%;
+            height: 150px;
+            /* border: 1px solid black; */
+            /* box-shadow: 5px 5px 8px #ddd; */
+        }
+        
+        #firstRight {
+            width: 58%;
+            height: 600px;
+            position: relative;
+            float: left;
+            overflow: scroll;
+            /* border: 1px solid black; */
+        }
+        /*  */
+        
+        #secondLeft {
+            width: 68%;
+            height: 480px;
+            position: relative;
+            float: left;
+            /* border: 1px solid black; */
+            overflow: scroll;
+        }
+        
+        #secondRight {
+            width: 30%;
+            height: 480px;
+            position: relative;
+            float: left;
+            /* border: 1px solid black; */
+            background-color: #eee;
+            color: black;
+        }
+        
+        #secondBottom {
+            width: 100%;
+            height: 168px;
+            border: 1px solid black;
+            float: left;
+            position: relative;
+            margin-top: 50px;
+        }
+        
+        .tech {
+            width: 20%;
+            height: 100px;
+            /* border: 1px solid black; */
+            position: relative;
+            float: left;
+            margin: 18px 2%;
+            box-shadow: 3px 3px 3px #254a8e;
+        }
+        
+        .techName {
+            position: relative;
+            width: 80%;
+            background-color: #254a8e;
+            color: white;
+            margin: auto;
+            text-align: center;
+        }
+        
+        .webtech {
+            position: relative;
+            left: 30px;
+            margin: 10px;
+            font-size: 0.8vw;
+        }
+        
+        #thridTop {
+            width: 100%;
+            height: 100px;
+            position: relative;
+            float: left;
+            /* border: 1px solid black; */
+            margin-top: 50px;
+            box-shadow: 3px 3px 3px #eee;
+        }
+        
+        #thirdFirtLeft {
+            width: 12%;
+            height: 200px;
+            position: relative;
+            /* border: 1px solid black; */
+            float: left;
+            margin-left: 5%;
+            margin-top: 150px;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 3px 3px 3px #eee;
+        }
+        
+        #thirdFirstRight {
+            width: 75%;
+            height: 500px;
+            position: relative;
+            float: left;
+            /* border: 1px solid black; */
+            background-color: white;
+            box-shadow: 3px 3px 3px #eee;
+        }
+        
+        .TRBox {
+            width: 30%;
+            height: 400px;
+            margin-right: 3%;
+            /* border: 1px solid black; */
+            position: relative;
+            float: left;
+        }
+        
+        .TRIntro {
+            width: 30%;
+            height: 80px;
+            margin-right: 3%;
+            /* border: 1px solid black; */
+            position: relative;
+            float: left;
+            box-shadow: 3px 3px 3px #eee;
+        }
+        
+        #forthOuter {
+            width: 90%;
+            height: 600px;
+            margin: 50px 5%;
+            position: relative;
+            float: left;
+            box-shadow: 3px 3px 3px #eee;
+            background-image: url(image/header.png);
+            background-size: 100% 120%;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+        
+        #forthInner {
+            width: 350px;
+            height: 250px;
+            position: relative;
+            margin-top: 200px;
+            margin-left: 60%;
+            background-color: white;
+            text-align: center;
+            box-shadow: 3px 3px 3px #eee;
+            padding: 50px;
+        }
+        
+        #fifthHead {
+            width: 100%;
+            height: 100px;
+            margin-top: 30px;
+            position: relative;
+            float: left;
+            box-shadow: 3px 3px 3px #eee;
+            text-align: center;
+        }
+        
+        .fifthBody {
+            width: 45%;
+            height: 500px;
+            overflow: scroll;
+            position: relative;
+            float: left;
+            box-shadow: 3px 3px 3px #eee;
+            margin-left: 4%;
+        }
+        
+        #souvenir {
+            width: 500px;
+            height: 500px;
+            margin-left: 5%;
+            position: absolute;
+            /* border: 1px solid black; */
+            overflow: hidden;
+        }
+        
+        #carouselSou {
+            width: 500%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        #carouselSou li {
+            list-style: none;
+            position: relative;
+            float: left;
+        }
+        
+        #leftArr {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            left: -10px;
+            top: 45%;
+            /* border: 1px solid black; */
+            border-radius: 50%;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 3px 3px 3px #2e303d;
+            font-size: 32px;
+        }
+        
+        #rightArr {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            left: 515px;
+            top: 45%;
+            /* border: 1px solid black; */
+            border-radius: 50%;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 3px 3px 3px #2e303d;
+            font-size: 32px;
+        }
+        
+        #final {
+            position: fixed;
+            top: 80px;
+            right: 50px;
+            width: 20px;
+            height: 250px;
+            text-align: center;
+            /* border: 1px solid black; */
+            box-shadow: 3px 3px 3px #eee;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='header'>
+        <ul id='head'>
+            <li>
+                <a href="banner.html">
+                    <p style="font-size:48px;">Cecilia</p>
+                </a>
+            </li>
+            <li><a href="jsexsercise.html">JS练习</a></li>
+            <!-- <li><a href="javascript:">设计作品</a></li> -->
+            <li><a href="project1.html">课程项目</a></li>
+            <li><a href="banner.html">关于我</a></li>
+        </ul>
+    </div>
+    <div id="smallheader">
+        <div class='more'>
+            <a href="javascript:"><img src="image/more.png"></a>
+        </div>
+        <div class='close'>
+            <img src='image/close.png'>
+        </div>
+        <div class='portrait'>
+            <a href="banner.html"><img src="image/port.jpg"></a>
+        </div>
+        <div class='contact'>
+            <a href="javascript:"><img src="contact.png"></a>
+        </div>
+        <div class='email'>
+            <p>lnr_xixi@163.com</p>
+        </div>
+    </div>
+
+    <div id='smallNav'>
+        <ul>
+            <li><a href="jsexsercise.html">JS练习</a></li>
+            <!-- <li><a href="javascript:">设计作品</a></li> -->
+            <li><a href="project1.html">课程项目</a></li>
+            <li><a href="banner.html">关于我</a></li>
+        </ul>
+    </div>
+    <div id='project'>
+        <p>Brwon Bag It </br>动态网页设计</p>
+        <a href="javascript:" style="color:grey">上一个</a>
+        <a href="project2.html" style="color:black">下一个</a>
+    </div>
+    <div id="mainProject">
+        <div id="firstLeft">
+            <div class='intro'>
+                <div style="font-size:2.5vw; position:relative; float:left">01</div>
+                <div style="font-size:1.5vw; position:relative; float:left; margin-left: 20px;top:10px;">项目背景</div>
+            </div>
+            <div class='introduction'>
+                根据英国大学联盟（Universities UK）发布的《2019年英国留学生报告》统计分析称，英国留学生人数仅次于美国，对全世界的学生吸引力很强劲。2017-2018年，共有458490名国际留学生在英国高等教育机构学习，占英国学生总数的19.6.%。在这样一个多元文化背景下学习的同学，也会有对食物的多元化需求。目前提供食谱的网站中，热门的有十全菜谱，Food，Cooks 等，还有下厨房，美食杰。虽然这些菜谱网站提供的食谱数量多，分类覆盖面广，但是没有专门的为学生设计的提供食谱的网站。大部分网站也没有提供烹饪时间的分类选项。基于此缺口，我们小组决定设计一个专门为英国在校大学生提供快手菜的网站。
+            </div>
+            <div id="responsible">
+                <ul><b>我的职责：</b>
+                    </br>
+                    </br>
+                    <li>参与讨论网站主题及需求分析</li>
+                    <li>撰写产品需求文档，使用墨刀和axure制作产品低保真</li>
+                    <li>参与讨论界面设计，使用HTML，CSS，JS和Bootstrap完成前端代码</li>
+                </ul>
+            </div>
+        </div>
+        <div id="firstRight">
+            <img src="image/BBIintro.png" style="top:30px;position:absolute;">
+        </div>
+        <!--  -->
+        <div id="secondLeft">
+            <img src='image/userneed.png' style="width:1024px">
+        </div>
+        <div id="secondRight">
+            <div class='intro'>
+                <div style="font-size:2.5vw; position:relative; float:left">02</div>
+                <div style="font-size:1.5vw; position:relative; float:left; right: -15px;top:10px;">需求总结</div>
+            </div>
+            <div class='introduction'>
+                外卖和食谱是学生除学习之外搜索频率最高的内容。吃饭也是每天必须解决的问题。通过调查和访谈，我们发现，现有的食谱搜索结果过于零碎，且有时候没有明确搜索目标。 大部分学生们都希望有一个集中食谱信息的平台。考虑到 技术能力和时间限制，在网站开发初期，我们使用yummly API 提供热门的快手菜食谱。考虑到目标用户为在校大学生，其中，留学生不知道去哪里买厨房用品，我们提供网站自营的商品，同学们可以自助网上下单。注册成为会员 也为我们维护客户，提供食谱推送等后续迭代工作作出铺垫。
+            </div>
+        </div>
+
+        <div id="secondBottom ">
+
+            <div class='tech'>
+                <div class='techName'>前端UI设计</div>
+                <ul class='webtech'>
+                    <li>使用PS，AI完成平面设计</li>
+                    <li>使用Axure完成网页低保真设计</li>
+                </ul>
+            </div>
+            <div class='tech'>
+                <div class='techName'>前端交互</div>
+                <ul class='webtech'>
+                    <li>使用HTML，CSS实现网页静态效果</li>
+                    <li>使用Javascript,Bootstrap实现网页动效</li>
+                </ul>
+            </div>
+            <div class='tech'>
+                <div class='techName'>后端开发</div>
+                <ul class='webtech'>
+                    <li>使用PHP进行后端开发，前后端交互</li>
+                </ul>
+            </div>
+            <div class='tech'>
+                <div class='techName'>食谱数据库</div>
+                <ul class='webtech'>
+                    <li>使用Yummly API</li>
+                </ul>
+            </div>
+
+        </div>
+        <div id="thridTop">
+            <div style="font-size:2.5vw; position:relative; float:left; margin:auto 50px;">03</div>
+            <div style="font-size:1.5vw; position:relative; float:left;top:15px;">设计过程及结果展示</div>
+        </div>
+        <div id="thirdFirtLeft">
+            <h2>核心功能设计</h2>
+            <h3 style="margin:10px 20%">食谱查询</h3>
+            <span>用户可以通过简单的三步找到自己需要的食谱，流程图如下</span>
+        </div>
+        <div id='thirdFirstRight'>
+            <div class="TRBox" style="background-image:url(image/recipeCat.png); background-size:cover;">
+            </div>
+            <div class="TRBox" style="background-image:url(image/categories.png); background-size:cover"></div>
+            <div class="TRBox" style="background-image:url(image/recipeSingle.png); background-size:cover"></div>
+            <!--  -->
+            <div class="TRIntro">
+                <h3> 1 分类查询食谱</h3>
+
+            </div>
+            <div class="TRIntro">
+                2 选择菜肴
+            </div>
+            <div class="TRIntro">
+                3 查看详细食谱及营养成分
+            </div>
+        </div>
+        <div id="forthOuter">
+            <div id="forthInner">
+                <h2 style="position:relative; top:10px">导航栏</br>一致性设计</h2>
+                <span style="position:relative; top:60px;">经过测试，收集反馈意见后，我们把导航栏样式统一。从原来的主页黑白导航栏，其他页面彩色导航栏修改称为统一的以彩色为底的导航栏。除此之外，我们还把导航栏内图片进行了修改，方便用户识别页面内容。</span>
+            </div>
+        </div>
+        <div id="fifthHead">
+            <h2>首页介绍及商品设计</h2>
+        </div>
+        <div class="fifthBody" id="FBLeft">
+            <img src="image/BBIHome.png" style='width:680px;'>
+        </div>
+        <div class="fifthBody" id="FBRight">
+            <div id='leftArr'>
+                &lt;</div>
+            <div id='rightArr'>&gt;</div>
+            <div id="souvenir">
+
+                <ul id="carouselSou">
+                    <li><img src='image/hat.png'></li>
+                    <li><img src='image/apron.png'></li>
+                    <li><img src='image/chopping.png'></li>
+
+                </ul>
+            </div>
+
+        </div>
+        <div id="final">
+            <a href="https://media.ed.ac.uk/media/BrownBagIt+Beta/1_16n3cc1m" style="color:black;">点击查看网站完整视频</a>
+        </div>
+        <!--  -->
+    </div>
+    <div id='footer'>
+        <p style="color:white">联系邮箱：lnr_xixi@163.com
+            </br>感谢您的关注！
+        </p>
+    </div>
+</body>
+<script>
+    var leftArr = document.querySelector('#leftArr');
+    var rightArr = document.querySelector('#rightArr');
+    var carouselSou = document.querySelector('#carouselSou');
+    // var lis = carouselSou.querySelectorAll('li');
+    var num = 0;
+
+    var cloneLi = carouselSou.children[0].cloneNode(true);
+    carouselSou.appendChild(cloneLi);
+    // var lis = carouselSou.querySelectorAll('li');
+
+    rightArr.addEventListener('click', function() {
+        if (num == carouselSou.children.length - 1) {
+
+            carouselSou.style.left = 0 + 'px';
+            num = 0;
+            // alert(11);
+        }
+        num++;
+        animation(carouselSou, -num * 500);
+
+
+    })
+
+
+    leftArr.addEventListener('click', function() {
+        if (num == 0) {
+            num = carouselSou.children.length - 1;
+            carouselSou.style.left = -num * 500 + 'px';
+        }
+        num--;
+        animation(carouselSou, -num * 500);
+
+    });
+
+    function animation(obj, target, callback) {
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function() {
+            var step = (target - obj.offsetLeft) / 10;
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+
+            if (obj.offsetLeft == target) {
+                clearInterval(obj.timer);
+                // callback && callback();
+            }
+
+            obj.style.left = obj.offsetLeft + step + 'px';
+        }, 15)
+
+    }
+</script>
+
+</html>

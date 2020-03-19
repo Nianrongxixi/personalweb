@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>web-Project3</title>
+    <link rel="stylesheet" href="base.css">
+    <script src="common.js"></script>
+    <style>
+        #project {
+            position: relative;
+            width: 400px;
+            height: 100px;
+            margin: 24px auto;
+            text-align: center;
+        }
+        
+        #project p {
+            font-size: 24px;
+        }
+        
+        #project a {
+            margin: 20px;
+        }
+        
+        #mainProject {
+            width: 90%;
+            overflow: scroll;
+            margin: 10px auto;
+            position: relative;
+            background-color: #fafafa;
+            /* height: 400%; */
+            /* border: 1px solid black; */
+            box-shadow: 5px 5px 8px #2e303d;
+        }
+        
+        #introAoyuan {
+            width: 1024px;
+            height: 600px;
+            position: relative;
+            float: left;
+            /* border: 1px solid black; */
+        }
+        
+        #aoyuanText {
+            width: 200px;
+            height: 400px;
+            margin-top: 100px;
+            position: relative;
+            float: left;
+            /* border: 1px solid black; */
+            word-break: normal;
+        }
+        
+        @media screen and (max-width: 1224px) {
+            #mainProject {
+                width: 990px;
+            }
+            #aoyuanText {
+                width: 990px;
+                height: 200px;
+                text-align: center;
+                /* border: 1px solid black; */
+                box-shadow: 3px 3px 3px #eee;
+                top: 0;
+                margin: 0;
+            }
+        }
+        
+        #secondName {
+            width: 100%;
+            height: 100px;
+            position: relative;
+            float: left;
+            box-shadow: 3px 3px 3px #eee;
+            text-align: center;
+        }
+        
+        .secondchart {
+            width: 45%;
+            height: 600px;
+            overflow: scroll;
+            position: relative;
+            float: left;
+            /* border: 1px solid black; */
+            margin: 2%;
+        }
+        
+        #thirdTitile {
+            width: 100%;
+            height: 100px;
+            position: relative;
+            float: left;
+        }
+        
+        #thirdPage {
+            width: 100%;
+            height: 600px;
+            position: relative;
+            float: left;
+            /* border: 1px solid black; */
+            box-shadow: 3px 3px 3px #eee;
+        }
+        
+        .aboutRight {
+            position: absolute;
+            top: 0;
+            right: 100px;
+            width: 20%;
+            margin-top: 150px;
+            text-align: center;
+            background-color: #fafafa;
+            padding: 10px;
+            /* border: 1px solid black;
+            box-shadow: 3px 3px 3px #eee; */
+        }
+        
+        button {
+            background-color: #6c4b4b;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            margin: 4px 2px;
+            BORDER-RADIUS: 10% 0 10% 0;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #c9b2ba;
+            color: white;
+        }
+        
+        #forthPage {
+            width: 100%;
+            height: 600px;
+            position: relative;
+            float: left;
+            /* border: 1px solid black; */
+            box-shadow: 3px 3px 3px #eee;
+        }
+        
+        #forthProduct {
+            width: 990px;
+            height: 600px;
+            position: absolute;
+            right: 100px;
+            /* border: 1px solid black; */
+            box-shadow: 3px 3px 3px #eee;
+            margin: 0 auto;
+        }
+        
+        #pageHead {
+            width: 990px;
+        }
+        
+        .pageAbout {
+            position: relative;
+            float: left;
+            top: 0;
+            left: 0;
+            width: 20%;
+            margin-top: 150px;
+            text-align: center;
+            z-index: 999;
+            background-color: #fafafa;
+            padding: 10px;
+            /* border: 1px solid black; */
+            /* box-shadow: 3px 3px 3px #eee; */
+        }
+        
+        #pageHeadUl {
+            background-color: #6c4b4b;
+            height: 50px;
+        }
+        
+        #pageHeadUl li {
+            list-style: none;
+            position: relative;
+            top: 0;
+            float: left;
+            padding: 10px 9%;
+            cursor: pointer;
+            color: white;
+        }
+        /* #pageHeadUl li:hover {
+            background-color: #c9b2ba;
+            color: white;
+        } */
+        
+        .current {
+            background-color: #c9b2ba;
+            color: white;
+        }
+        
+        .item {
+            width: 990px;
+            height: 500px;
+            position: relative;
+            /* border: 1px solid black; */
+            float: left;
+            /* margin: 0 auto; */
+            top: 0;
+        }
+        
+        #fifthPage {
+            width: 100%;
+            height: 600px;
+            position: relative;
+            float: left;
+            box-shadow: 3px 3px 3px #eee;
+        }
+        
+        #sixthPage {
+            width: 100%;
+            height: 600px;
+            position: relative;
+            float: left;
+            box-shadow: 3px 3px 3px #eee;
+        }
+        
+        #seventhCart {
+            width: 100%;
+            height: 600px;
+            position: relative;
+            float: left;
+            box-shadow: 3px 3px 3px #eee;
+        }
+        
+        #eighthLogin {
+            width: 100%;
+            height: 600px;
+            position: relative;
+            float: left;
+        }
+        
+        #ninthNews {
+            width: 100%;
+            height: 600px;
+            position: relative;
+            float: left;
+        }
+        
+        #tenthGame {
+            width: 100%;
+            height: 600px;
+            position: relative;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='header'>
+        <ul id='head'>
+            <li>
+                <a href="javascript:">
+                    <p style="font-size:48px;">Cecilia</p>
+                </a>
+            </li>
+            <li><a href="jsexsercise.html">JS练习</a></li>
+            <!-- <li><a href="javascript:">设计作品</a></li> -->
+            <li><a href="project1.html">课程项目</a></li>
+            <li><a href="javascript:">关于我</a></li>
+        </ul>
+    </div>
+    <div id="smallheader">
+        <div class='more'>
+            <a href="javascript:"><img src="image/more.png"></a>
+        </div>
+        <div class='close'>
+            <img src='image/close.png'>
+        </div>
+        <div class='portrait'><img src="image/port.jpg"></div>
+        <div class='contact'>
+            <a href="javascript:"><img src="image/contact.png"></a>
+        </div>
+        <div class='email'>
+            <p>lnr_xixi@163.com</p>
+        </div>
+    </div>
+
+    <div id='smallNav'>
+        <ul>
+            <li><a href="jsexsercise.html">JS练习</a></li>
+            <!-- <li><a href="javascript:">设计作品</a></li> -->
+            <li><a href="project1.html">课程项目</a></li>
+            <li><a href="javascript:">关于我</a></li>
+        </ul>
+    </div>
+    <div id='project'>
+        <p>aoyuan </br>货品信息／购物网站</p>
+        <a href="project2.html" style="color:black">上一个</a>
+        <a href="javascript:" style="color:grey">下一个</a>
+    </div>
+    <div id='mainProject'>
+        <!-- 项目背景，功能流程图，页面流程图，低保真 各个页面展示 -->
+        <div id="introAoyuan">
+            <img src="image/aoyuanHome.png">
+        </div>
+        <div id="aoyuanText">
+            <h1>01</h1>
+            <h2>项目背景</h2>
+            <span>aoyuan源于澳洲，目前创始人已在线下开了实体店，客源不断增加。随之而来的问题是只在线上购买的客户或者新加入的客户只能关注最近发布的产品信息。经常去实体店的客户可能会错过线上的海外商品的信息发布。
+                为解决信息整合，方便查找，自动化管理的需求，创始人提出建设体验馆的网页，定期发布和管理所有库存商品信息。
+            </br>
+            点击中间按钮可以查看联系方式
+            </span>
+        </div>
+        <div id='secondName'>
+            <h1>02</h1>
+            <span style="background-color:#6d4c4c; color:white;">购物业务流程图和页面流程图</span>
+        </div>
+        <div id="flowchartLeft" class="secondchart">
+            <img src="image/aoyuan业务流程图.png" style="width:562px;margin:0 auto;">
+        </div>
+        <div id="flowchartRight" class='secondchart'>
+            <img src="image/页面流程图.png" style="width:562px;margin:0 auto;">
+        </div>
+        <div id='thirdTitile'>
+            <h1>03</h1>
+            <h2>页面展示</h2>
+        </div>
+        <div id='thirdPage'>
+            <img src="image/aboutUs.png">
+            <div class="aboutRight">
+                <h4>关于aoyuan介绍页</h4>
+                <span>此页面主要是介绍aoyuan生活体验馆的发展历史，
+                    并会简要介绍营网站内容。
+                </span></br>
+                <button id="clicktoContact">点击中间按钮查看联系方式</button>
+            </div>
+        </div>
+
+        <div id="forthPage">
+            <div class="pageAbout">
+                <h4>四类商品介绍</h4>
+                <span>点击上方标签可以分别了解四类产品介绍和热门产品。aoyuan体验馆主要供应鞋子，衣服，保健品和其他类的商品。
+                            每类商品的介绍页会放最热门的商品，用户可以点击了解更多查看更多商品。
+                </span>
+            </div>
+            <div id="forthProduct">
+                <div id="pageHead">
+                    <ul id="pageHeadUl">
+                        <li class="current">热门鞋子</li>
+                        <li class="">热门保健品</li>
+                        <li class="">热门服饰</li>
+                        <li class="">其他好物</li>
+                    </ul>
+                </div>
+                <div id="pageBody">
+                    <div class="item" style="display:block;">
+                        <img src="image/shoesPage.png">
+                    </div>
+                    <div class="item" style="display:none;">
+                        <img src="image/healthPage.png">
+                    </div>
+                    <div class="item" style="display:none;">
+                        <img src="image/clothPage.png">
+                    </div>
+                    <div class="item" style="display:none;">
+                        <img src="image/othersPage.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="fifthPage">
+            <div style="width:990px;position:relative;margin:0 auto;">
+                <div style='width:300px;height:80px;margin:10px auto; text-align:center;padding:5px;'>
+                    <h4>全部商品页面</h4>
+                    <span>用户点击“了解详情”即可进入所有商品页面。该页面支搜索商品、分类查看商品。
+                </div>
+                <img src="image/全部商品.png">
+            </div>
+        </div>
+        <div id="sixthPage">
+            <img src="image/单个商品.png">
+            <div class="aboutRight">
+                <h4>单个商品页</h4>
+                <span>
+                    点击单个商品后，可以查看商品详情，包括商品颜色，评论和图片，也可以选择商品尺码，数量。可以直接购买或者加入购物车。
+                </span></br>
+
+
+                </div>
+            </div>
+
+
+            <div id="seventhCart">
+                <div class="pageAbout">
+                    <h4>查看购物车</h4>
+                    用户挑选完商品后可以查看购物车。在购物车页面用户可以选择部分商品或者全部商品进行购买。
+                </div>
+                <img src="image/购物车.png" style="position:absolute;right:100px">
+            </div>
+
+
+            <div id="eighthLogin">
+                <img src="image/登陆.png">
+                <div class="aboutRight">
+                    <h4>用户登录或注册</h4>
+                    <span>确认下单后，跳转至登陆页面，确认用户信息和收货地址。</span></br>
+                    <button id="logIn">用户登录</button>
+                    <button id="register">用户注册</button>
+                </div>
+            </div>
+
+            <div id="ninthNews">
+                <div class="pageAbout">
+                    <h4>新闻页</h4>
+                    <span>最近门店开关门、节假日通知，线上、线下实体店上新动态尽在新闻页面。</span>
+                </div>
+                <img src='image/新闻.png' style="position:absolute; right:100px">
+            </div>
+
+            <div id="tenthGame">
+                <img src="image/gamestart.png">
+                <div class="aboutRight">
+                    <h4>游戏页</h4>
+                    <span>通过传统游戏——贪吃蛇，了解品牌文化。贪吃蛇是一个简单，易操作并被大众所
+                        熟悉的游戏，通过吃每一个“食物”，用户可以加深对品牌文化的认知。
+                    </span></br>
+                    <button id="startGame">开始页面</button></br>
+                    <button id="endGame">结束页面</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div id='footer'>
+            <p style="color:white">联系邮箱：lnr_xixi@163.com
+                </br>感谢您的关注！
+            </p>
+        </div>
+        <script>
+            var clickContact = document.querySelector('#clicktoContact');
+            var thirdPage = document.querySelector('#thirdPage');
+            var homeimg = thirdPage.querySelector('img');
+            var flag = 0;
+            clicktoContact.addEventListener('click', function() {
+                if (flag == 0) {
+                    homeimg.src = 'image/aboutContact.png';
+                    clickContact.innerHTML = '点击返回介绍';
+                    flag = 1;
+                } else {
+                    homeimg.src = 'image/aboutUs.png';
+                    clickContact.innerHTML = '点击中间按钮查看联系方式';
+                    flag = 0;
+                }
+
+            })
+
+            var pageHeadUl = document.querySelector('#pageHeadUl');
+            var pageBody = document.querySelector('#pageBody');
+            var pageLis = pageHeadUl.querySelectorAll('li');
+            var item = document.querySelectorAll('.item');
+
+            for (var i = 0; i < pageLis.length; i++) {
+                pageLis[i].setAttribute('index', i);
+                pageLis[i].addEventListener('click', function() {
+                    for (var i = 0; i < pageLis.length; i++) {
+                        pageLis[i].className = '';
+                        item[i].style.display = 'none';
+                    }
+                    this.className = 'current';
+                    //记得获取index
+                    var index = this.getAttribute('index');
+                    item[index].style.display = 'block';
+                })
+            }
+
+
+            var eighthLogin = document.getElementById('eighthLogin');
+            var userImg = eighthLogin.querySelector('img');
+            var logIn = document.querySelector('#logIn');
+            var register = document.querySelector('#register');
+
+
+            logIn.addEventListener('click', function() {
+                userImg.src = 'image/登陆.png';
+            });
+            register.addEventListener('click', function() {
+                userImg.src = 'image/注册.png';
+            });
+
+            var tenthGame = document.getElementById('tenthGame');
+            var gameimg = tenthGame.querySelector('img');
+            var startGame = document.getElementById('startGame');
+            var endGame = document.getElementById('endGame');
+
+            startGame.addEventListener('click', function() {
+                gameimg.src = 'image/gamestart.png';
+            });
+            endGame.addEventListener('click', function() {
+                gameimg.src = 'image/gamefinish.png';
+            });
+        </script>
+</body>
+
+</html>

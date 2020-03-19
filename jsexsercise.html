@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="base.css">
+    <script src="common.js"></script>
+    <style>
+        #project {
+            position: relative;
+            width: 120px;
+            height: 50px;
+            margin: 24px auto;
+        }
+        
+        #project p {
+            font-size: 24px;
+        }
+        
+        #introjs {
+            width: 10%;
+            /* height: 300px; */
+            position: absolute;
+            top: 200px;
+            right: 0;
+            /* border: 1px solid black; */
+            margin: 10px;
+            padding: 12px;
+            box-shadow: 5px 5px 8px #2E303D;
+        }
+        
+        #introjs button {
+            background-color: #2e303d;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            margin: 4px 2px;
+            BORDER-RADIUS: 5%;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            display: none;
+        }
+        
+        #introjs button:hover {
+            background-color: lightgrey;
+            color: white;
+        }
+        
+        #maincontent {
+            position: relative;
+            width: 85%;
+            /* height: 660px; */
+            margin: 24px auto;
+            /* border: 1px solid black; */
+            overflow: scroll;
+        }
+        /* 更换背景图片 */
+        
+        .jsEg {
+            position: relative;
+            display: inline-block;
+            float: left;
+            list-style: none;
+            /* border: 1px solid black; */
+            width: 350px;
+            height: 350px;
+            margin: 20px;
+            overflow: scroll;
+            box-shadow: 5px 5px 8px #2e303d;
+        }
+        
+        .jsEg:hover {
+            box-shadow: 2px 2px 5px #2E303D;
+        }
+        /* 全选反选 */
+        
+        #changeColor {
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            line-height: 36px;
+            text-align: center;
+            font-size: 18px;
+            margin: 25% auto;
+            padding: 10px auto;
+        }
+        
+        #changeColor thead {
+            background-color: #f1f1f1;
+            /* padding: 20px; */
+        }
+        /* 商品介绍 */
+        
+        #commentHead {
+            /* width: 100%; */
+            height: 39px;
+            margin-top: 50px;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+        
+        #commentHead li {
+            list-style: none;
+            float: left;
+            height: 39px;
+            line-height: 39px;
+            text-align: center;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        
+        #commentHead .current {
+            background-color: #2E303D;
+            color: white;
+        }
+        
+        #commentBody {
+            height: 150px;
+            border: 1px solid #ccc;
+            padding: 20px 0 0 20px;
+        }
+        
+        .item {
+            display: none;
+        }
+        /* 增加／删除评论 */
+        
+        #text {
+            width: 250px;
+            height: 150px;
+            position: relative;
+            border: 1px solid #ccc;
+            margin: auto 12.5%;
+            outline: none;
+            resize: none;
+            overflow: scroll;
+        }
+        
+        #addComment {
+            margin-top: 50px;
+        }
+        
+        #addComment>li {
+            width: 300px;
+            padding: 5px;
+            color: 2E303D;
+            margin: 0 8px;
+            padding: 15px;
+            background-color: #ccc;
+            list-style: none;
+        }
+        
+        .commentbtn {
+            position: relative;
+            top: 0;
+            background-color: #ccc;
+            text-decoration: none;
+            border: none;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 14px;
+            margin: auto 15%;
+        }
+        
+        .commentbtn {
+            -webkit-transition-duration: 0.4s;
+            /* Safari */
+            transition-duration: 0.4s;
+        }
+        
+        .commentbtn:hover {
+            background-color: #2E303D;
+            /* Green */
+            color: white;
+        }
+        
+        #addComment>li a {
+            float: right;
+        }
+        /*  倒计时 */
+        
+        #count {
+            margin: 10% 25%;
+        }
+        
+        #count span {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: #2E303D;
+            font-size: 20px;
+            color: white;
+            line-height: 40px;
+            text-align: center;
+        }
+        
+        #yanzhengCount {
+            margin: 10% 50px;
+        }
+        
+        #timeStamp p {
+            position: absolute;
+            top: 250px;
+        }
+        /* 显示／隐藏密码*/
+        
+        #hide,
+        #delivery {
+            position: relative;
+            margin: 25px;
+            width: 300px;
+            height: 100px;
+            border: 1px solid #ccc;
+        }
+        
+        #hide input {
+            width: 250px;
+            height: 30px;
+            outline: none;
+        }
+        
+        #hide img {
+            position: absolute;
+            top: 25px;
+            right: 15px;
+            width: 24px;
+        }
+        /* 快递单号 */
+        
+        .deliveryNum {
+            position: absolute;
+            top: 36px;
+        }
+        
+        .bigDiv {
+            display: none;
+            position: absolute;
+            top: -8px;
+            width: 150px;
+            border: 1px solid rgba(0, 0, 0.2);
+            box-shadow: 0 2px 4px rgba(0, 0, 0.2);
+            padding: 5px 0;
+            font-size: 18px;
+            line-height: 20px;
+            color: #333;
+        }
+        
+        .bigDiv::before {
+            content: '';
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 28px;
+            left: 28px;
+            border: 8px solid #ccc;
+            border-style: solid dashed dashed;
+            border-color: #fff transparent transparent;
+        }
+        /* 点击弹出登陆框 */
+        
+        #loginLink {
+            position: relative;
+            margin: 30%;
+        }
+        
+        #loginDiv {
+            display: none;
+            width: 300px;
+            height: 220px;
+            position: absolute;
+            border: 1px solid #ebebeb;
+            left: 170px;
+            top: -80px;
+            background: #ffff;
+            box-shadow: 0px 0px 20px #ddd;
+            z-index: 999;
+            transform: translate(-50%, 50%);
+        }
+        
+        #loginTitile {
+            width: 100%;
+            margin: 10px 0px 0px 0px;
+            text-align: center;
+            line-height: 40px;
+            height: 40px;
+            font-size: 18px;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        #loginTitile span {
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            font-size: 12px;
+            right: -10px;
+            top: -20px;
+            border: 1px solid #ebebeb;
+            background: #ffff;
+            border-radius: 50%;
+        }
+        
+        #loginContent {
+            margin-top: 10px;
+        }
+        
+        #loginBtn {
+            width: 50%;
+            height: 30px;
+            margin: 10px auto;
+            border: 1px solid #ebebeb;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        #loginMask {
+            width: 100%;
+            height: 100%;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .loginInput {
+            overflow: hidden;
+            margin: 0px 0px 20px 0px;
+        }
+        
+        .loginInput label {
+            float: left;
+            width: 90px;
+            padding-right: 10px;
+            text-align: right;
+            line-height: 35px;
+            height: 35px;
+            font-size: 12px;
+        }
+        
+        .loginInput input {
+            float: left;
+            line-height: 35px;
+            height: 35px;
+            width: 150px;
+            border: 1px solid #ebebeb;
+            text-indent: 5px;
+        }
+        /* 导航栏 */
+        
+        .nav {
+            margin: 50px 20px;
+        }
+        
+        .nav>li {
+            position: relative;
+            float: left;
+            width: 99px;
+            height: 36px;
+            text-align: center;
+            list-style-type: none;
+        }
+        
+        .nav li a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            line-height: 36px;
+            color: #333;
+        }
+        
+        .nav li a:hover {
+            background-color: #eeee;
+        }
+        
+        .nav ul {
+            display: none;
+            position: absolute;
+            top: 36px;
+            left: 0;
+            width: 100%;
+            border-left: 1px solid #eeee;
+            border-right: 1px solid #eeee;
+        }
+        
+        .nav ul li {
+            border-bottom: 1px solid #eeee;
+            list-style-type: none;
+        }
+        
+        .nav ul li a:hover {
+            background-color: #eeee;
+        }
+        /*  放大镜*/
+        
+        #fangdajing {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            box-shadow: 2px 2px 20px #ccc;
+            margin-top: 10px;
+        }
+        
+        #fangdaSmall {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            left: 0;
+            float: left;
+            /* border: 1px solid black; */
+        }
+        
+        #fangdaMask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60px;
+            height: 60px;
+            background-color: wheat;
+            opacity: 0.4;
+            z-index: 999;
+            display: none;
+        }
+        
+        #fangdaBig {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            left: 110px;
+            box-shadow: 2px 2px 20px #ccc;
+            overflow: hidden;
+            display: none;
+        }
+        /* 物品介绍 */
+        
+        #avocado {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            top: 100px;
+            right: 0;
+            overflow: hidden;
+            border-radius: 50%;
+            z-index: 999;
+            cursor: pointer;
+        }
+        
+        #introText {
+            position: relative;
+            margin: 10px 20%;
+        }
+        
+        #introAvo {
+            width: 300px;
+            height: 150px;
+            position: absolute;
+            top: 100px;
+            left: 200px;
+            border-radius: 10% 0 0 10%;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0.2);
+            z-index: 998;
+        }
+        
+        .nutrition li {
+            margin: 20px 10px;
+            position: relative;
+            left: 25px;
+        }
+        /* 旋转盒子商品展示 */
+        
+        #breathing {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            transform-style: preserve-3d;
+            transform: perspective(600px) rotateY(-60deg) rotateX(45deg);
+            /* transform: */
+        }
+        
+        .breathing div {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            top: 75px;
+            left: 75px;
+            box-shadow: 0 2px 4px #ccc;
+            background-color: lightgrey;
+        }
+        
+        .top {
+            transform: translateZ(75px);
+        }
+        
+        .bottom {
+            transform: translateZ(-75px);
+        }
+        
+        .left {
+            transform: rotateX(90deg) translateZ(-75px);
+        }
+        
+        .right {
+            transform: rotateX(90deg) translateZ(75px);
+        }
+        
+        .front {
+            transform: rotateY(90deg) translateZ(-75px);
+        }
+        
+        .back {
+            transform: rotateY(90deg) translateZ(75px);
+        }
+        
+        .showBtn,
+        #snakeBtn {
+            position: absolute;
+            bottom: 50px;
+            background-color: #ccc;
+            text-decoration: none;
+            border: none;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 14px;
+            margin: auto 40%;
+        }
+        /* 贪吃蛇 */
+        
+        #playground {
+            width: 300px;
+            height: 250px;
+            position: absolute;
+            top: 0;
+            left: 25px;
+            background-color: #ddd;
+        }
+        
+        #snakeHead {
+            width: 10px;
+            height: 10px;
+            background-color: #2E303D;
+            position: absolute;
+        }
+        
+        #snakeFood {
+            width: 10px;
+            height: 10px;
+            background-color: wheat;
+            position: absolute;
+        }
+        
+        .snakeBody {
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            background-color: red;
+            z-index: 999;
+            /* position: absolute; */
+        }
+        /* #snakeBodyAll {
+            position: absolute;
+            z-index: 999;
+        } */
+        /* general盒子 */
+        
+        .up {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            /* border: 1px solid black; */
+        }
+        
+        .inner {
+            width: 50px;
+            height: 50px;
+            position: relative;
+            margin: 20% auto;
+            /* float: left; */
+            box-shadow: 2px 2px 5px #2E303D;
+        }
+        
+        .inner:hover {
+            box-shadow: 2px 2px 5px white;
+            cursor: pointer;
+        }
+        
+        .down {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            /* border: 1px solid black; */
+            background-color: #2E303D;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='header'>
+        <ul id='head'>
+            <li>
+                <a href="banner.html">
+                    <p style="font-size:48px;">Cecilia</p>
+                </a>
+            </li>
+            <li><a href="javascript:">JS练习</a></li>
+            <!-- <li><a href="javascript:">设计作品</a></li> -->
+            <li><a href="project1.html">课程项目</a></li>
+            <li><a href="banner.html">关于我</a></li>
+        </ul>
+    </div>
+    <div id="smallheader">
+        <div class='more'>
+            <a href="javascript:"><img src="image/more.png"></a>
+        </div>
+        <div class='close'>
+            <img src='image/close.png'>
+        </div>
+        <div class='portrait'>
+            <a href="banner.html"><img src="image/port.jpg"></a>
+        </div>
+        <div class='contact'>
+            <a href="javascript:"><img src="image/contact.png"></a>
+        </div>
+        <div class='email'>
+            <p>lnr_xixi@163.com</p>
+        </div>
+    </div>
+
+    <div id='smallNav'>
+        <ul>
+            <li><a href="javascript:">JS练习</a></li>
+            <!-- <li><a href="javascript:">设计作品</a></li> -->
+            <li><a href="project1.html">课程项目</a></li>
+            <li><a href="banner.html">关于我</a></li>
+        </ul>
+    </div>
+    <div id='project'>
+        <p>前端练习</p>
+    </div>
+    <div id="introjs">
+        <h3>动效练习</h3>
+        </br>
+        <span>日常浏览网页的时候，我发现了一些常见的，和很有意思的交互。此页面分类显示这些练习，持续更新中...</span>
+        </br><button>
+            <!-- <img src="backtop.png"> -->
+            返回顶部
+        </button>
+    </div>
+    <div id="maincontent">
+        <ul>
+            <li class="jsEg">
+                <div class='up' id="firstUp">
+                    <div class="inner"><img src="image/backsmall1.png"></div>
+                    <div class="inner"><img src="image/backsmall2.png"></div>
+                </div>
+                <div class='down'>
+                    <p>点击小图更换背景图片
+                        </br>
+                        类似应用：开关灯
+                    </p>
+
+                </div>
+            </li>
+
+            <li class="jsEg">
+                <div class='up' id=''>
+                    <table id='changeColor'>
+                        <thead class='ccHead'>
+                            <tr>
+                                <td>商品名</td>
+                                <td>数量</td>
+                                <td>价格（元／斤）</td>
+                                <td>
+                                    全选<input type="checkbox" id="checkAll">
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody id='ccBody'>
+                            <tr>
+                                <td>西红柿</td>
+                                <td>20</td>
+                                <td>3.5</td>
+                                <td><input type="checkbox" id=""></td>
+                            </tr>
+                            <tr>
+                                <td>黄瓜</td>
+                                <td>10</td>
+                                <td>2</td>
+                                <td><input type="checkbox" id=""></td>
+                            </tr>
+                            <tr>
+                                <td>白菜</td>
+                                <td>12</td>
+                                <td>1.8</td>
+                                <td><input type="checkbox" id=""></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class='down' id=''>
+                    <p>全选反选</p>
+                </div>
+            </li>
+
+            <li class="jsEg">
+                <div class='up' id=''>
+                    <div id='commentHead'>
+                        <ul>
+                            <li class='current'>商品介绍</li>
+                            <li>商品图片</li>
+                            <li>查看评论</li>
+                        </ul>
+                    </div>
+                    <div id='commentBody'>
+                        <div class='item' style="display:block">这里是商品介绍</div>
+                        <div class='item' style="display:none">这里可以放商品图片</div>
+                        <div class='item' style="display:none">这里是评论区，欢迎留下您的评论。</div>
+                    </div>
+                </div>
+                <div class='down' id=''>
+                    <p>分类显示商品详情</p>
+                </div>
+            </li>
+            <li class="jsEg">
+                <div class='up' id=''>
+                    <textarea id='text'></textarea></br>
+                    <button class='commentbtn' id="submitCom">发布</button>
+                    <button class='commentbtn' id="deleteText">删除</button>
+                    <ul id="addComment"></ul>
+                </div>
+                <div class='down' id=''>
+                    <p>增加，删除评论</p>
+                </div>
+            </li>
+            <li class="jsEg">
+                <div class='up' id='timeStamp'>
+                    输入时间(例：2020-02-21 12:00:00)):<input type="text" id='getTime'>
+                    <div id='count'>
+                        <span class='hour'></span>
+                        <span class='minute'></span>
+                        <span class='second'></span>
+                    </div>
+                    <div id="yanzhengCount">
+                        请输入您的手机号：</br>
+                        <input type='number'>
+                        <button id='yanzheng'>提交</button>
+                    </div>
+                    <p> 今天是：</p>
+                </div>
+                <div class='down' id=''>
+                    <p>倒计时</p>
+                </div>
+            </li>
+            <li class="jsEg">
+                <div class='up'>
+                    <div id='hide'>
+                        请输入您的密码：</br>
+                        <label for>
+                            <img src="image/closeeye.png">
+                        </label>
+                        <input type='password' class=''>
+                    </div>
+                    <div id='delivery'>
+                        <div class='bigDiv'></div>
+                        <input type='text' placeholder='请输入您的单号' class='deliveryNum'>
+
+                    </div>
+                </div>
+
+                <div class='down' id=''>
+                    <p>显示，隐藏密码</p>
+                </div>
+            </li>
+            <li class="jsEg">
+                <div class='up' id=''>
+                    <div id='loginLink'>
+                        <a href="javascript:" style="color:black">点击弹出登陆框</a>
+                    </div>
+
+                    <div id='loginMask'></div>
+                    <div id='loginDiv'>
+
+                        <div id="loginTitile">用户登陆
+                            <span>
+                                <a id="closeBtn" href='javascript:' style="color:black">关闭</a>
+                            </span>
+                        </div>
+                        <div id='loginContent'>
+                            <div class="loginInput">
+                                <label>用户名:</label>
+                                <input type='text' placeholder="请输入用户名" class='list-input'>
+                            </div>
+                            <div class="loginInput">
+                                <label>密码:</label>
+                                <input type='password' placeholder="请输入密码" class='list-input'>
+                            </div>
+                        </div>
+                        <div id='loginBtn'>
+                            <a href="javascript:" style="color:black">登陆</a>
+                        </div>
+                    </div>
+                </div>
+                <div class='down' id=''>
+                    <p>点击弹出登陆框</p>
+                </div>
+
+            </li>
+            <!-- 放大镜 -->
+            <li class="jsEg" id='fangdaDiv'>
+                <div class='up' id=''>
+                    <div id="fangdajing">
+
+                        <img src="image/fangdaSmall.png">
+                        <div id="fangdaMask"></div>
+
+                        <div id="fangdaBig">
+                            <img src="image/fangdaBig.png" id='moveBig' style="top:0; left:0; position:absolute;">
+                        </div>
+                    </div>
+                    <div style='position:absolute; bottom:80px;width:100%; text-align:center'>鼠标放在图片上，看图片细节</div>
+                </div>
+                <div class='down' id=''>
+                    <p>放大镜</p>
+                </div>
+            </li>
+            <li class="jsEg">
+                <div class='up' id=''>
+                    <ul class='nav'>
+                        <li>
+                            <a href="javascript:" style="color:black">前端练习</a>
+                            <ul style="display:none">
+                                <li><a href="javascript:">放大镜</a></li>
+                                <li><a href="javascript:">导航栏</a></li>
+                                <li><a href="javascript:">登陆</a></li>
+                            </ul>
+
+                        </li>
+                        <li>
+                            <a href="javascript:" style="color:black">设计作品</a>
+                            <ul style="display:none;">
+                                <li><a href="javascript:">海报设计</a></li>
+                                <li><a href="javascript:">旅行</a></li>
+                            </ul>
+
+                        </li>
+                        <li>
+                            <a href="javascript:" style="color:black">课程项目</a>
+                            <ul style="display:none">
+                                <li><a href="javascript:">网页设计</a></li>
+                                <li><a href="javascript:">爱丁堡艺术节</a></li>
+                                <li><a href="javascript:">时间管理工具</a></li>
+                            </ul>
+                        </li>
+            </li>
+            </div>
+            <div class='down' id=''>
+                <p>导航栏</p>
+            </div>
+            </li>
+            <li class="jsEg">
+                <div class='up' id=''>
+                    <div id="introText">鼠标放在牛油果上显示简介</div>
+                    <div id='avocado'>
+                        <img src="image/avocado.png">
+                    </div>
+                    <div id="introAvo">
+                        <ul class='nutrition'>
+                            <li>健胃</li>
+                            <li>美容养肤</li>
+                            <li>低糖，高叶酸</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class='down' id=''>
+                    <p>物品介绍</p>
+                </div>
+            </li>
+            <li class="jsEg">
+                <div class='up' id=''>
+                    <div id='breathing' class='breathing'>
+                        <div class='top'></div>
+                        <div class='left'></div>
+                        <div class='right'></div>
+                        <div class='front'></div>
+                        <div class='back'></div>
+                        <div class='bottom'></div>
+                    </div>
+                    <button class='showBtn'>商品展示</button>
+                </div>
+                <div class='down' id=''>
+                    <p>旋转盒子商品展示</p>
+                </div>
+            </li>
+            <li class="jsEg">
+                <div class='up'>
+                    <div id="playground">
+                        <div id="snakeHead"></div>
+                        <div id="snakeFood"></div>
+                        <div id='snakeBodyAll'></div>
+                    </div>
+                    <div style="position:absolute;bottom:50px; width:100%;
+                    text-align:center;">点击上／下／左／右键开始游戏</div>
+                </div>
+                <div class='down' id=''>
+                    <p>贪食蛇</p>
+                </div>
+            </li>
+            </ul>
+    </div>
+
+    <div id='footer'>
+        <p style="color:white">联系邮箱：lnr_xixi@163.com
+            </br>感谢您的关注！
+        </p>
+    </div>
+
+    <script>
+        //返回顶部
+        var introjs = document.querySelector('#introjs');
+        var header = document.querySelector('.header');
+        var backbtn = introjs.querySelector('button');
+        var slideTop = introjs.offsetTop + header.offsetHeight;
+
+        document.addEventListener('scroll', function() {
+            //获取页面被卷去的头部：window.pageYOffset，被卷去得左侧：window.pageXOffset
+            //注意区别元素滚动距离(element.scrollTop)与页面滚动距离(pageYOffset)
+            if (window.pageYOffset >= slideTop) {
+                introjs.style.position = 'fixed';
+                //当滚出offsetTop之后，由于sliderbar也有top值，会跳一下，解决：
+                introjs.style.top = slideTop + 'px';
+                backbtn.style.display = 'block';
+            } else {
+                introjs.style.position = 'absolute';
+                introjs.style.top = 200 + 'px';
+                backbtn.style.display = 'none';
+            }
+        })
+
+        //返回顶部window.scroll(x,y) 里面的xy不加px; 
+        backbtn.addEventListener('click', function() {
+            //但是这么返回太生硬
+            // window.scroll(0, 0);
+            //缓动动画--窗口滚动，对象就是window
+            backAnimation(window, 0);
+
+        });
+
+        function backAnimation(obj, target, callback) {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function() {
+
+                //该成与垂直相关的距离window.pageYOffset
+                var step = (target - window.pageYOffset) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (window.pageYOffset == target) {
+                    clearInterval(obj.timer);
+
+                    callback && callback();
+                }
+                window.scroll(0, window.pageYOffset + step);
+            }, 15);
+            // alert(11);
+
+        }
+
+
+        //换肤案例
+        var firstUp = document.querySelector('#firstUp');
+        var imgs = firstUp.querySelectorAll('img');
+        for (var i = 0; i < imgs.length; i++) {
+            imgs[i].onclick = function() {
+                firstUp.style.background = 'url(' + this.src + ')';
+            }
+        }
+
+        //所在行背景变色，全选反选
+        // 经过行变色
+        var ccBody = document.querySelector('#ccBody');
+        var rows = ccBody.querySelectorAll('tr');
+
+        for (var i = 0; i < rows.length; i++) {
+
+            rows[i].onmouseover = function() {
+                for (var i = 0; i < rows.length; i++) {
+                    rows[i].style.backgroundColor = '';
+                }
+                this.style.backgroundColor = 'grey';
+            };
+
+            rows[i].onmouseout = function() {
+                this.style.backgroundColor = '';
+            }
+        }
+        //全选反选
+        var checkAll = document.querySelector('#checkAll');
+        var checks = ccBody.getElementsByTagName('input');
+        // 点击全选， 下方的都全选
+        checkAll.onclick = function() {
+            for (var i = 0; i < checks.length; i++) {
+                checks[i].checked = this.checked;
+            }
+        }
+
+        // 绑定下面所有选择按钮的点击事件，如果全部选中，就把全选按钮也选中
+
+        for (var i = 0; i < checks.length; i++) {
+            // 先给每一个check绑定事件
+            checks[i].onclick = function() {
+                var flag = true;
+                // alert(11);
+                //this.checked 可以获取每一个选框的
+                //再循环一次检查是否所有的选框都被选了
+                for (var i = 0; i < checks.length; i++) {
+                    if (!checks[i].checked) {
+                        flag = false;
+                        break;
+                    }
+                }
+                checkAll.checked = flag;
+            }
+        }
+
+        //商品详情
+        var commentHead = document.querySelector('#commentHead');
+        var comLis = commentHead.querySelectorAll('li');
+
+        var items = document.querySelectorAll('.item');
+        for (var i = 0; i < comLis.length; i++) {
+            comLis[i].setAttribute('index', i);
+            comLis[i].onclick = function() {
+                for (var i = 0; i < comLis.length; i++) {
+                    comLis[i].className = '';
+                    items[i].style.display = 'none';
+                }
+                this.className = 'current';
+                var index = this.getAttribute('index');
+                items[index].style.display = 'block';
+            }
+        }
+
+        // 增加／删除评论
+        var textarea = document.querySelector('textarea');
+        var addComment = document.querySelector('#addComment');
+        var submitCom = document.querySelector('#submitCom');
+        submitCom.onclick = function() {
+            if (textarea.value == '') {
+                alert('请输入评论');
+                return false;
+            } else {
+                var comLi = document.createElement('li');
+                comLi.innerHTML = textarea.value + "<a href='javascript:'> 删除评论 </a>";
+                textarea.value = '';
+                addComment.insertBefore(comLi, addComment.children[0]);
+                //删除
+                var deleteCom = comLi.querySelectorAll('a');
+                for (var i = 0; i < deleteCom.length; i++) {
+                    deleteCom[i].onclick = function() {
+                        addComment.removeChild(this.parentNode);
+                    }
+                }
+            }
+        }
+
+        //如果没有评论了，就禁用删除按钮
+        var deleteText = document.querySelector('#deleteText');
+        deleteText.onclick = function() {
+            if (addComment.children.length == 0) {
+                this.disabled = true;
+                alert('没有评论了，请添加评论。')
+            } else {
+                addComment.removeChild(addComment.children[0]);
+            }
+        }
+
+        //倒计时案例
+        var getTime = document.querySelector('#getTime');
+        var hour = document.querySelector('.hour');
+        var minute = document.querySelector('.minute');
+        var second = document.querySelector('.second');
+
+        var newTime = getTime.value;
+        var inputTime = +new Date(newTime);
+
+        countDown();
+        setInterval(countDown, 1000);
+        // console.log(inputTime);
+        // 现在的时间距离1970-1-1午夜事件的毫秒数
+        // var inputTime = +new Date('2020-02-20 12:00:00');
+
+        function countDown() {
+            var nowTime = +new Date();
+            // 由于得到的是毫秒，记得／1000
+            var calcuTime = (inputTime - nowTime) / 1000;
+
+            var h = parseInt(calcuTime / 60 / 60 % 24);
+            h = h < 10 ? '0' + h : h;
+            hour.innerHTML = h;
+            var m = parseInt(calcuTime / 60 % 60);
+            m = m < 10 ? '0' + m : m;
+            minute.innerHTML = m;
+            var s = parseInt(calcuTime % 60);
+            s = s < 10 ? '0' + s : s;
+            second.innerHTML = s;
+            // alert(m, s);
+        }
+
+        // 验证码
+        // var yanzhengCount = document.querySelector('#yanzhengCount');
+        var yanzheng = document.querySelector('#yanzheng');
+        var timeryanzheng = null;
+        yanzheng.addEventListener('click', function() {
+            yanzheng.disabled = true;
+            timeryanzheng = setInterval(countSeconds, 1000);
+        })
+        var secondNum = 15;
+
+        function countSeconds() {
+            if (secondNum == 0) {
+                clearInterval(timeryanzheng);
+                yanzheng.disabled = false;
+                yanzheng.innerHTML = '提交';
+                secondNum = 15;
+            } else {
+
+                yanzheng.innerHTML = secondNum + '秒之后重新发送';
+                secondNum--;
+            }
+
+        }
+        //提示时间
+        var timeStamp = document.querySelector('#timeStamp');
+        var pTime = timeStamp.querySelector('p');
+
+        var date = new Date();
+
+        function getDate() {
+            var year = date.getFullYear();
+            var month = date.getMonth();
+            var dates = date.getDate();
+            var day = date.getDay();
+
+            var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+            return '今天是' + year + ' 年' + (month + 1) + ' 月' + dates + '日' +
+                arr[day];
+        }
+
+        pTime.innerHTML = getDate();
+
+        //显示隐藏密码
+        var hide = document.querySelector('#hide');
+        var eyes = hide.querySelector('img');
+        var pass = hide.querySelector('input');
+
+        var hidden = 0;
+        eyes.addEventListener('click', function() {
+            if (hidden == 0) {
+                eyes.src = 'image/openeye.png';
+                pass.type = 'text';
+                hidden = 1;
+            } else {
+                eyes.src = 'image/closeeye.png';
+                pass.type = 'password';
+                hidden = 0;
+            }
+
+        })
+
+        var delivery = document.querySelector('#delivery');
+        var bigDiv = delivery.querySelector('.bigDiv');
+        var deliveryNum = delivery.querySelector('input');
+        //用keyup keydown检测事件发生
+        deliveryNum.addEventListener('keyup', function() {
+                if (deliveryNum.value == '') {
+                    bigDiv.style.display = 'none';
+                } else {
+                    bigDiv.style.display = 'block';
+                    bigDiv.innerHTML = this.value;
+                }
+            })
+            //鼠标离开，大盒子隐藏
+        deliveryNum.addEventListener('blur', function() {
+            bigDiv.style.display = 'none';
+        });
+        deliveryNum.addEventListener('focus', function() {
+            if (deliveryNum.value !== '') {
+                bigDiv.style.display = 'block';
+            }
+        });
+        // 点击弹出登陆框
+        var loginLink = document.querySelector('#loginLink');
+        var loginMask = document.querySelector('#loginMask');
+        var loginDiv = document.querySelector('#loginDiv');
+        var closeBtn = document.querySelector('#closeBtn');
+
+
+        loginLink.addEventListener('click', function() {
+            loginMask.style.display = 'block';
+            loginDiv.style.display = 'block';
+        });
+        closeBtn.addEventListener('click', function() {
+            loginMask.style.display = 'none';
+            loginDiv.style.display = 'none';
+        })
+
+        // 放大镜
+        var fangdaDiv = document.querySelector('#fangdaDiv');
+        var fangdajing = document.querySelector('#fangdajing');
+        var fangdaMask = document.querySelector('#fangdaMask');
+        var fangdaBig = document.querySelector('#fangdaBig');
+        var maincontent = document.querySelector('#maincontent');
+        var moveBig = document.querySelector('#moveBig');
+
+        fangdajing.addEventListener('mouseenter', function() {
+            fangdaMask.style.display = 'block';
+            fangdaBig.style.display = 'block';
+        });
+
+        fangdajing.addEventListener('mouseleave', function() {
+            fangdaMask.style.display = 'none';
+            fangdaBig.style.display = 'none';
+        });
+
+        fangdajing.addEventListener('mousemove', function(e) {
+
+            // console.log(e.pageX);
+            //计算鼠标在盒子内的位置，由此计算mask的位置
+            // console.log(this.offsetLeft);
+            var x = e.pageX - fangdaDiv.offsetLeft - maincontent.offsetLeft - this.offsetLeft;
+            var y = e.pageY - fangdaDiv.offsetTop - maincontent.offsetTop - this.offsetTop;
+            // console.log(fangdaDiv.offsetLeft);
+            // console.log(e.pageX);
+            // console.log(x, y);
+
+            //mask的位置
+            var maskX = x - (fangdaMask.offsetWidth / 2);
+            var maskY = y - (fangdaMask.offsetHeight / 2);
+
+            //判断，如果mask边界超过盒子边界，则不再移动；这里的盒子是正方形的，上下最大移动距离一样
+            var maskMax = fangdajing.offsetWidth - fangdaMask.offsetWidth;
+            //上下移动判断：
+            if (maskX <= 0) {
+                maskX = 0;
+            } else if (maskX >= maskMax) {
+                maskX = maskMax;
+            };
+            if (maskY <= 0) {
+                maskY = 0;
+            } else if (maskY >= maskMax) {
+                maskY = maskMax;
+            };
+            fangdaMask.style.left = maskX + 'px';
+            fangdaMask.style.top = maskY + 'px';
+
+            //mask的移动距离／最大移动距离=大图片的移动距离／大图最大移动距离
+            var moveBigMax = moveBig.offsetWidth - fangdaBig.offsetWidth;
+            // console.log(fangdaBig.offsetWidth);
+            // console.log(moveBig.offsetWidth);
+            var bigX = maskX * moveBigMax / maskMax;
+            var bigY = maskY * moveBigMax / maskMax;
+            console.log(bigX);
+            console.log(bigY);
+            moveBig.style.left = -bigX + 'px';
+            moveBig.style.top = -bigY + 'px';
+
+        });
+
+
+
+
+
+
+        //下拉菜单
+        var nav = document.querySelector('.nav');
+        var lis = nav.children;
+        // console.log(lis);
+        //element.childNodes 会返回文本元素
+
+        // var liss = nav.childNodes;
+        // console.log(liss);
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].onmouseover = function() {
+                this.children[1].style.display = 'block';
+            };
+            lis[i].onmouseout = function() {
+                this.children[1].style.display = 'none';
+            }
+        }
+
+
+
+
+        //物品简介
+        var avocado = document.querySelector('#avocado');
+        var introAvo = document.querySelector('#introAvo');
+
+        function easeAni(obj, target, callback) {
+            clearInterval(obj.timer);
+
+            obj.timer = setInterval(function() {
+                var step = (target - obj.offsetLeft) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.timer);
+                    callback && callback();
+                }
+                obj.style.left = obj.offsetLeft + step + 'px';
+
+
+            }, 30);
+        };
+
+        avocado.addEventListener('mouseenter', function() {
+            easeAni(introAvo, 50);
+        });
+        avocado.addEventListener('mouseleave', function() {
+            easeAni(introAvo, 200);
+        });
+
+        //旋转展示商品
+        var breathing = document.querySelector('#breathing');
+        var showBtn = document.querySelector('.showBtn');
+        var flag = 0;
+
+        showBtn.addEventListener('click', function() {
+            if (flag == 0) {
+                rotateTimer = setInterval(rotation, 60);
+                showBtn.innerHTML = '停止'
+                flag = 1;
+            } else {
+                clearInterval(rotateTimer);
+                showBtn.innerHTML = '商品展示';
+                flag = 0;
+
+            }
+
+
+
+        })
+        var x = 0;
+        var y = 0;
+
+        function rotation() {
+            x = x + 2;
+            y = y + 2;
+            breathing.style.transform = 'perspective(600px) rotateY(' + y + 'deg) rotateX(' + x + 'deg)';
+        };
+
+        // 贪吃蛇
+        var playground = document.querySelector('#playground');
+        var snakeHead = document.querySelector('#snakeHead');
+        var snakeFood = document.querySelector('#snakeFood');
+        var snakeBtn = document.querySelector('#snakeBtn');
+
+
+        //记录
+        var arrPosition = [];
+        var num = 0; //数组长度
+        var timer;
+
+        //蛇移动!!!一定要加position定位！！
+        document.onkeydown = function(e) {
+            // alert('kaishi');
+            var e = e || window.event;
+            switch (e.keyCode) {
+                case 37:
+                    clearInterval(timer);
+                    timer = window.setInterval(runLeft, 10);
+
+                    function runLeft() {
+                        if (snakeHead.offsetLeft > 0) {
+                            snakeHead.style.left = snakeHead.offsetLeft - 1 + 'px';
+                            snakeHead.style.top = snakeHead.offsetTop + 'px';
+                            //记录蛇的位置
+                            arrPosition.push([snakeHead.offsetLeft, snakeHead.offsetTop]);
+                            num++;
+
+                        } //else if (snakeHead.offsetLeft == 0) {
+                        //     alert('Game Over');
+                        // }
+                    }
+                    break;
+
+                case 38:
+                    clearInterval(timer);
+                    timer = window.setInterval(runTop, 10);
+                    // alert('kaishi');
+
+                    function runTop() {
+                        if (snakeHead.offsetTop > 0) {
+                            snakeHead.style.top = snakeHead.offsetTop - 1 + 'px';
+                            snakeHead.style.left = snakeHead.offsetLeft + 'px';
+                            arrPosition.push([snakeHead.offsetLeft, snakeHead.offsetTop]);
+                            num++;
+                        } //else if (snakeHead.offsetTop == 0) {
+                        //     // alert('Game Over');
+                        // }
+                    }
+                    break;
+
+                case 39:
+                    clearInterval(timer);
+                    timer = window.setInterval(runRight, 10);
+
+                    function runRight() {
+                        if (snakeHead.offsetLeft + snakeHead.offsetWidth <= 300) {
+                            snakeHead.style.left = snakeHead.offsetLeft + 1 + 'px';
+                            snakeHead.style.top = snakeHead.offsetTop + 'px';
+                            arrPosition.push([snakeHead.offsetLeft, snakeHead.offsetTop]);
+                            num++;
+                        }
+                    }
+                    break;
+
+                case 40:
+                    clearInterval(timer);
+                    timer = window.setInterval(runBottom, 10);
+
+                    function runBottom() {
+                        if (snakeHead.offsetTop + snakeHead.offsetHeight <= 250) {
+                            snakeHead.style.top = snakeHead.offsetTop + 1 + 'px';
+                            snakeHead.style.left = snakeHead.offsetLeft + 'px';
+                            arrPosition.push([snakeHead.offsetLeft, snakeHead.offsetTop]);
+                            num++;
+                        }
+                    }
+                    break;
+
+            }
+        };
+        // 食物随机出现
+        function foodPosition() {
+            snakeFood.style.left = Math.floor(Math.random() * 290) + 'px';
+            snakeFood.style.top = Math.floor(Math.random() * 240) + 'px';
+            // snakeFood.style.width = '10px';
+            // snakeFood.style.height = '10px';
+            snakeFood.style.position = 'absolute';
+        }
+        foodPosition();
+        //检测碰撞(四种情况)并添加身体
+        var sbody;
+        var snakeBodyAll = document.querySelector('#snakeBodyAll');
+
+        function eaten() {
+            eat(snakeHead, snakeFood);
+
+            function eat(obj1, obj2) {
+                var obj1Left = obj1.offsetLeft;
+                var obj1Width = obj1.offsetLeft + obj1.offsetWidth;
+                var obj1Top = obj1.offsetTop;
+                var obj1Height = obj1.offsetTop + obj1.offsetHeight;
+
+                var obj2Left = obj2.offsetLeft;
+                var obj2Width = obj2.offsetLeft + obj2.offsetWidth;
+                var obj2Top = obj2.offsetTop;
+                var obj2Height = obj2.offsetTop + obj2.offsetHeight;
+                //四种碰撞情况
+                if (!(obj1Left > obj2Width || obj1Width < obj2Left || obj1Top > obj2Height || obj1Height < obj2Top)) {
+                    sbody = document.createElement('div');
+                    sbody.setAttribute('class', 'snakeBody');
+                    snakeBodyAll.appendChild(sbody);
+
+                    foodPosition();
+                    //身体跟随
+                    setInterval(follow, 5);
+
+
+                }
+            }
+        }
+
+        var timer1 = setInterval(eaten, 10);
+        var winner;
+        //添加了多少身体
+        function follow() {
+            var bodyNum = document.getElementsByClassName('snakeBody');
+            winner = bodyNum.length;
+            var place = 0;
+            for (var i = 0; i < bodyNum.length; i++) {
+                place += 10;
+                bodyNum[i].style.left = arrPosition[num - place][0] + 'px';
+                bodyNum[i].style.top = arrPosition[num - place][1] + 'px';
+                bodyNum[i].style.position = 'absolute';
+                bodyNum[i].style.backgroundColor = "red";
+            }
+
+
+        }
+
+
+        if (winner == 2) {
+            clearInterval(timer);
+            clearInterval(timer1);
+            alert('Congratulations');
+        }
+    </script>
+</body>
+
+</html>

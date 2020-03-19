@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>web-Project2</title>
+    <link rel="stylesheet" href="base.css">
+    <script src="common.js"></script>
+    <style>
+        #project {
+            position: relative;
+            width: 400px;
+            height: 100px;
+            margin: 24px auto;
+            text-align: center;
+        }
+        
+        #project p {
+            font-size: 24px;
+        }
+        
+        #project a {
+            margin: 20px;
+        }
+        
+        #mainProject {
+            width: 90%;
+            overflow: scroll;
+            margin: 10px auto;
+            position: relative;
+            background-color: #fafafa;
+            /* height: 400%; */
+            /* border: 1px solid black; */
+            box-shadow: 5px 5px 8px #2e303d;
+        }
+        
+        #firstIntro {
+            width: 20%;
+            height: 400px;
+            position: relative;
+            float: left;
+            top: 150px;
+            margin-left: 50px;
+            /* font-size: 1vw; */
+            text-align: center;
+        }
+        
+        @media screen and (max-width: 1024px) {
+            #mainProject {
+                width: 990px;
+            }
+            #firstIntro {
+                width: 900px;
+                height: 250px;
+                padding: 30px;
+                text-align: center;
+                /* border: 1px solid black; */
+                box-shadow: 3px 3px 3px #2e303d;
+                top: 0;
+                margin-left: 0;
+            }
+        }
+        
+        #firstposter {
+            width: 70%;
+            height: 768px;
+            margin-left: 25px;
+            position: relative;
+            /* top: -100px; */
+            float: left;
+        }
+        
+        #fringePoster img {
+            position: relative;
+            /* right: 0; */
+            float: left;
+        }
+        
+        #secondTech {
+            width: 90%;
+            height: 1700px;
+            position: relative;
+            float: left;
+            margin: 10px 15%;
+            overflow: scroll;
+            /* border: 1px solid black; */
+        }
+        
+        #theme {
+            width: 80%;
+            height: 200px;
+            position: relative;
+            float: left;
+            text-align: left;
+            padding: 40px;
+            margin: 10px 10%;
+        }
+        
+        #theme h2 {
+            text-align: center;
+            margin: 20px;
+        }
+        
+        #secondTech button {
+            background-color: #2e303d;
+            border: none;
+            color: white;
+            padding: 12px 12px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 3px 3px 3px lightgrey;
+            font-size: 12px;
+            margin: 4px 2px;
+            /* BORDER-RADIUS: 10% 0 10% 0; */
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        
+        #secondTech button:hover {
+            background-color: grey;
+            color: white;
+        }
+        
+        .keyword {
+            width: 20%;
+            height: 150px;
+            position: relative;
+            float: left;
+            margin-left: 35px;
+            box-shadow: 3px 3px 3px #eee;
+            padding: 24px;
+            text-align: left;
+        }
+        
+        .keyword h3 {
+            text-align: center;
+        }
+        
+        .innerTech {
+            width: 468px;
+            height: 678px;
+            position: relative;
+            float: left;
+            margin: 10px;
+            margin: 20px 3%;
+            box-shadow: 3px 3px 3px #eee;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        .innerTech span {
+            font-size: 0.8vw;
+            text-align: left;
+        }
+        /* .innerTech h3 {
+            text-align: center;
+        } */
+        
+        #innerOne {
+            background-image: url(image/data.png);
+        }
+        
+        #innerTwo {
+            background-image: url(image/route.png);
+        }
+        
+        #innerThree {
+            background-image: url(image/button.png);
+        }
+        
+        #innerFour {
+            background-image: url(image/硬件.png);
+        }
+        
+        #dataMore {
+            width: 428px;
+            height: 500px;
+            margin: 0 auto;
+            position: relative;
+            /* border: 1px solid black; */
+            overflow: scroll;
+        }
+        
+        #dataMore ul {
+            width: 428px;
+            height: 450px;
+            position: absolute;
+            top: 0;
+            overflow: scroll;
+            z-index: 999;
+        }
+        
+        #dataMore li {
+            list-style: none;
+            float: left;
+        }
+        
+        #outer {
+            width: 428px;
+            height: 450px;
+        }
+        
+        #route {
+            width: 428px;
+            height: 450px;
+            /* border: 1px solid black; */
+            background-color: white;
+            display: none;
+        }
+        /*  */
+        
+        #routeDesign {
+            width: 90%;
+            height: 600px;
+            position: relative;
+            float: left;
+            /* margin: 0 auto; */
+            margin: 10px 5%;
+            text-align: center;
+        }
+        
+        #designHeader {
+            width: 100%;
+            height: 130px;
+            background-color: #eee;
+        }
+        
+        #outerDesign {
+            width: 990px;
+            height: 500px;
+            position: relative;
+            margin: 0 auto;
+            /* border: 1px solid black; */
+        }
+        
+        .innerDesign {
+            width: 428px;
+            height: 480px;
+            position: relative;
+            float: left;
+            overflow: scroll;
+            /* border: 1px solid black; */
+            margin-left: 4%;
+            box-shadow: 3px 3px 3px #eee;
+        }
+        
+        #thirdBody {
+            width: 90%;
+            height: 600px;
+            position: relative;
+            float: left;
+            box-shadow: 3px 3px 3px #eee;
+            margin: 10px 5%;
+            overflow: scroll;
+        }
+        
+        #video {
+            width: 300px;
+            height: 400px;
+            position: relative;
+            left: 5%;
+            top: 100px;
+            /* border: 1px solid black; */
+        }
+        
+        #visualizeData li {
+            display: none;
+            background-color: white;
+            text-align: left;
+            margin-top: 70px;
+        }
+        
+        #flowchartHeader {
+            width: 100%;
+            height: 100px;
+            text-align: center;
+            position: relative;
+            float: left;
+            background-color: #eee;
+            top: 0;
+            z-index: 999;
+        }
+        
+        #lastdef {
+            width: 90%;
+            height: 100px;
+            text-align: center;
+            position: relative;
+            float: left;
+            margin: 10px 5%;
+            box-shadow: 3px 3px 3px #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='header'>
+        <ul id='head'>
+            <li>
+                <a href="banner.html">
+                    <p style="font-size:48px;">Cecilia</p>
+                </a>
+            </li>
+            <li><a href="jsexsercise.html">JS练习</a></li>
+            <!-- <li><a href="javascript:">设计作品</a></li> -->
+            <li><a href="project1.html">课程项目</a></li>
+            <li><a href="banner.html">关于我</a></li>
+        </ul>
+    </div>
+    <div id="smallheader">
+        <div class='more'>
+            <a href="javascript:"><img src="image/more.png"></a>
+        </div>
+        <div class='close'>
+            <img src='image/close.png'>
+        </div>
+        <div class='portrait'>
+            <a href="banner.html"><img src="image/port.jpg"></a>
+        </div>
+        <div class='contact'>
+            <a href="javascript:"><img src="image/contact.png"></a>
+        </div>
+        <div class='email'>
+            <p>lnr_xixi@163.com</p>
+        </div>
+    </div>
+
+    <div id='smallNav'>
+        <ul>
+            <li><a href="jsexsercise.html">JS练习</a></li>
+            <!-- <li><a href="javascript:">设计作品</a></li> -->
+            <li><a href="project1.html">课程项目</a></li>
+            <li><a href="banner.html">关于我</a></li>
+        </ul>
+    </div>
+    <div id='project'>
+        <p>爱丁堡艺术节</br>躲避人群装置设计</p>
+        <a href="project1.html" style="color:black">上一个</a>
+        <a href="project3.html" style="color:black">下一个</a>
+    </div>
+    <div id='mainProject'>
+        <div id='firstIntro'>
+            <h1>01</h1>
+            <h2>项目背景</h2>
+            <span>每年八月份，爱丁堡会迎来盛大的艺术节。爱丁堡市内的观光客人达到一年来的顶峰。热闹非凡的
+                另一面是拥堵的城市交通，熙熙攘攘的人群，大街上特别是主要的艺术节演出场地，都会挤满游客。
+                城市拥挤给本地人出行、生活带来了不便，外地游客也不能感受爱丁堡古老平静的美。艺术节主办方和政府提出这一问题，
+                我们小组将设计一个能够提供：1）有效避让人群、2）进行城市深度游的路线装置。
+            </span>
+            </br>
+            </br>
+            <ul style="text-align:left;font-size:0.8vw">
+                我的职责：
+                <li>使用python收集整理并可视化艺术节期间爱丁堡的人口密集度数据</li>
+                <li>收集整理目的地地理信息数据，用python查询路线和导航命令</li>
+                <li>设计照片上传二维码对应的网页</li>
+                <li>参与需求讨论，需求整理，提出可行性方案</li>
+            </ul>
+        </div>
+        <div id='firstposter'>
+            <img src="image/fringelessPos.png" style="width:990px;height:768px;">
+        </div>
+        <div id="theme">
+
+            <h2 style="margin-top:50px;">02&nbsp;&nbsp;主题</h2>
+            <span>首先，我们需要直观地传递“拥堵”的信息：哪里拥挤，哪里相对来说是人少的地方。结合所学，我们在数据“物理可视化（Physicalisation）”和“可视化（Visualisation）”中
+                作选择，为了更好地实现最终效果，我们提出了两套方案：</br>1）使用物理可视化的方式将拥堵信息做成实物地图，结合VR技术，用户可以通过扫不同地点二维码，观察我们设定的地点的拥堵视频。
+            </br>(2)使用数据可视化的方式，通过算法设计避开拥堵地区，生成“寻宝路线”，让游客带着探索的目的，“闹中取静”地游览城市。
+        </br>考虑到VR技术的实现和物理可视化地图建模的难度，我们最终选择了第二套方案。主题确定为三个方面：数据可视化，IOT，还有“逃离”。接下来的内容将介绍实现的过程。
+
+            </span>
+        </div>
+        <div id='secondTech'>
+            <div class='keyword'>
+                <h3>数据可视化</h3>
+                </br>
+                <span>
+                    此项目以数据为导向，</br>1）可视化最为拥挤的地区；
+                </br> 2）查找最拥挤地区地理信息数据，辅助设计规避人群路线。
+            
+                </span>
+            </div>
+            <div class='keyword'>
+                <h3>IoT</h3>
+                <span>实时更新城市拥堵情况，动态生成避让人群游览路线。</span>
+            </div>
+            <div class='keyword'>
+                <h3>“逃离”</h3>
+                <sapn>虽然项目的主题是“躲避人群”，但其实是提供给本地人和外来游客更好的 城市游览体验，即逃离喧嚣，享受爱丁堡深度游。
+                </sapn>
+            </div>
+            <!--  -->
+            <div class='innerTech' id='innerOne'>
+                <h3>数据</h3>
+
+                <span>
+                    实现方式：使用Python从Google PopulartimesAPI中获取到爱丁堡一周内24个地点分类，共1092个位置的拥挤信息。
+                </br>点击“静态”按钮查看某时爱丁堡的拥挤情况，点击“动态”查看一天24小时的拥挤情况变化。
+              
+                </span>
+                <div id="dataMore">
+                    <ul id="visualizeData">
+                        <li>
+                            <img src="image/heatMap.png" style="width:428px;">
+                            </br>
+                            <span>数据：</br>1）爱丁堡城市地图：OpenStreetMap(上界限：55.963719, -3.22949；下界限：55.932490, -3.149196);
+                            </br>2）寻找某时“可逃离”区域：可视化1092个数据的某时刻（例上午9点），即找出最有可能拥堵的区域的地理信息（即经度纬度）。
+                            </span>
+                        </li>
+                        <li>
+
+                            <video src='image/contour.mp4' controls='controls' style='width:428px;'>
+                            </video>
+                            </br>
+
+                            <span>
+                                 一天内人口密度变动：</br>1）Google populartimes API 获取24类地点（共1092个地点）一周的数据;
+                            </br> 2）使用Matlab对数据处理：平均每天每时人口密度；
+                            </br> 3）使用plotly中等降雨线图可视化拥挤情况.
+                            </span>
+
+                        </li>
+                    </ul>
+                </div>
+                <button id='staticData'>静态：爱丁堡某时拥挤情况</button>
+                <button id='activeData'>动态：24小时的拥挤情况</button>
+
+            </div>
+            <div class='innerTech' id='innerTwo'>
+                <h3>路线</h3>
+                <span>
+                    从起始点到终点，通过回避上一步可视化数据整理出的拥挤区域，得到一条”逃离路线“。
+                </br>1）起始点：以装置实际放置位置为准，默认在爱丁堡王子街（市中心）；
+                </br>2）终点：人工选取40个目的地，这些目的分别来自旅游局官网、app等。
+                 </br>3）路线：使用python在Googlemap中添加路线筛选条件，自动生成。
+                </span>
+                <div id='outer'>
+                    <div id="route">
+                        <h4>所有目的地</h4>
+                        <img src="image/destinations.png" style="width:428px;">
+                        <h4>导航路线</h4>
+                        <img src="image/luxian.png" style="width:428px;">
+                    </div>
+                </div>
+                <button id="routeBtn">目的地和路线图</button>
+            </div>
+            <div class='innerTech' id='innerThree'>
+                <h3>目的地类型</h3>
+                <span>经过筛选，共找找出40个地点，分为四大类：</br>1）历史遗迹；2）绿地（公园）；3）特色建筑；4）画廊博物馆
+                </br>将四类目的地分别用四个按钮表示；
+                </span>
+            </div>
+            <div class='innerTech' id='innerFour'>
+                <h3>硬件</h3>
+                <span>1）使用Raspberry Pi进行数据储存和实时生成路线； </br>2）使用热敏打印机实现路线打印。</span>
+            </div>
+
+        </div>
+        <div id="routeDesign">
+            <div id="designHeader">
+                <h3>路线形式设计与网站设计</h3>
+                <span>
+                    左：路线设计
+                </br>为了让“躲避”的过程更有趣味性，我们决定将导航路线设计为类似于“寻宝”游戏，丰富导航中的信息，如使用路边建筑物图片，导航文字指导，和部分路线图。打印的“小票”如下图所示。
+            </br>右：网站设计——经验分享（社交功能）
+        </br>在使用者到达目的地之后，用手机相机扫描路线最下方目的地的二维码，即可看见目的地的详细介绍，并上传途中拍摄的照片上传至我们的官方ins首页，查看／分享此次的寻宝游戏。
+                </span>
+            </div>
+            <div id="outerDesign">
+                <div class="innerDesign">
+                    <img src="image/recipe.png" style="width:428px;">
+                </div>
+                <div class="innerDesign">
+                    <img src="image/barcode.png" style="width:428px;">
+                </div>
+            </div>
+        </div>
+        <div id='thirdBody'>
+            <div id='flowchartHeader'>
+                <h3>业务流程图</h3>
+                <span>准备好数据和硬件设备之后，就是实现上述效果。
+                </br>使用视频和业务流程图如下：
+                </span>
+            </div>
+            <img src='image/fringe业务流程图.png' style='position:absolute; right:0;width:800px;top:100px;'>
+
+            <div id='video'>
+                <video src='image/printRoute.mp4' controls='controls' style='width:300px; height:400px;'></video>
+
+            </div>
+        </div>
+        <div id="barcode"></div>
+
+        <div id='lastdef'>
+            <h4>活动当天打印路线展示</h4>
+            <img src="image/allRecipt.jpeg" style="width:990px;position:relative">
+        </div>
+    </div>
+
+
+    <div id='footer'>
+        <p style="color:white">联系邮箱：lnr_xixi@163.com
+            </br>感谢您的关注！
+        </p>
+    </div>
+
+    <script>
+        var visualizeData = document.getElementById('visualizeData');
+        // var visLis = visualizeData.querySelectorAll('li');
+        var staticData = document.querySelector('#staticData');
+        var activeData = document.getElementById('activeData');
+        var flag = 0;
+
+        staticData.addEventListener('click', function() {
+            if (flag == 0) {
+                visualizeData.children[0].style.display = 'block';
+
+                staticData.innerHTML = '再次点击关闭';
+                flag = 1;
+            } else {
+                visualizeData.children[0].style.display = 'none';
+                staticData.innerHTML = '静态：爱丁堡某时拥挤情况';
+                flag = 0;
+            }
+
+        });
+        var flag1 = 0;
+        activeData.addEventListener('click', function() {
+            if (flag1 == 0) {
+                visualizeData.children[1].style.display = 'block';
+
+                activeData.innerHTML = '再次点击关闭';
+                flag1 = 1;
+
+            } else {
+                visualizeData.children[1].style.display = 'none';
+                activeData.innerHTML = '动态：24小时的拥挤情况';
+                flag1 = 0;
+            }
+
+        });
+
+        var routeBtn = document.querySelector('#routeBtn');
+        var route = document.querySelector('#route');
+        var flag2 = 0;
+        routeBtn.addEventListener('click', function() {
+            if (flag2 == 0) {
+                route.style.display = 'block';
+                routeBtn.innerHTML = "关闭";
+                flag2 = 1;
+            } else {
+                route.style.display = 'none';
+                routeBtn.innerHTML = "目的地和路线图";
+                flag2 = 0;
+            }
+        });
+    </script>
+
+</body>
+
+</html>
